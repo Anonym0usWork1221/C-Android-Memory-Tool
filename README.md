@@ -21,7 +21,7 @@ If you encounter any non-working functions, please open an issue and report it.
 
 *  Date   : 2023/06/02
 *  Author : **__Abdul Moez__**
-*  Version : 0.2 (Bug Fixed version)
+*  Version : 0.1 (Bug Fixed version)
 *  Study  : UnderGraduate in GCU Lahore, Pakistan
 *  Repository  : https://github.com/Anonym0usWork1221/C-Android-Memory-Tool
 *  Documentation: Starts From Below
