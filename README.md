@@ -21,7 +21,7 @@ If you encounter any non-working functions, please open an issue and report it.
 
 *  Date   : 2023/06/02
 *  Author : **__Abdul Moez__**
-*  Version : 0.1
+*  Version : 0.2 (Bug Fixed version)
 *  Study  : UnderGraduate in GCU Lahore, Pakistan
 *  Repository  : https://github.com/Anonym0usWork1221/C-Android-Memory-Tool
 *  Documentation: Starts From Below
@@ -35,40 +35,39 @@ The sample code provided demonstrates the usage of the memory tool. Let's go thr
 #include <iostream>
 #include "MemoryTools.h"
 
-int main(int argc, char *argv[]) {
-    initXMemoryTools(
-        /*process name*/
-        "com.tencent.ig",
-        /*mode root/no root*/
-        MODE_ROOT
-        /*MODE_NO_ROOT - for no root*/
-    );
+int main(int arc, char argv[]) {
+	/* 1. Package Name of the game
+	2. ROOT_MODE (tells you are using rooted device (not reooted device not implimented yet))
+	*/
+	char game_package[] = "com.tencent.ig";
+	MemoryTool memory_tool;
+	memory_tool.initXMemoryTools(game_package, MODE_ROOT);
 ```
 
 The code includes necessary headers and initializes the memory tool by calling initXMemoryTools(). It takes two parameters: the process name (in this case, "com.tencent.ig") and the mode ("MODE_ROOT" for rooted devices).
 
 ```cpp
-    SetSearchRange(ALL);
+   memory_tool.SetSearchRange(ALL);
 ```
 The SetSearchRange() function sets the search range for memory operations. In this case, it is set to "ALL," which means searching in all memory ranges.
 
 ```cpp
-    MemorySearch("1", TYPE_BYTE);
+   memory_tool.MemorySearch("1", TYPE_BYTE);
 ```
 The MemorySearch() function is used to search for a specific value in memory. In this example, it searches for the value "1" of type TYPE_BYTE.
 
 ```cpp
-    MemoryOffset("2", 2,/*offset*/ TYPE_BYTE);
+    memory_tool.MemoryOffset("2", 2, /*offset*/ TYPE_BYTE);
 ```
 The MemoryOffset() function is used to search for a specific value at an offset from a base address. It searches for the value "2" of type TYPE_BYTE with an offset of 2.
 
 ```cpp
-    MemoryWrite("0", 2,/*offset*/ TYPE_BYTE);
+    memory_tool.MemoryWrite("0", 2, /*offset*/ TYPE_BYTE);
 ```
 The MemoryWrite() function is used to write a value to a specific memory address. In this example, it writes the value "0" of type TYPE_BYTE with an offset of 2.
 
 ```cpp
-    ClearResults();
+    memory_tool.ClearResults();
 ```
 The ClearResults() function clears the linked list of results and frees up memory.
 ```cpp
